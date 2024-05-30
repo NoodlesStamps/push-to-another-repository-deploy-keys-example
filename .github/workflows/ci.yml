@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container: pandoc/latex
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install mustache (to update the date in build.sh)
         run:  apk add ruby && gem install mustache
       - name: creates the wanted files in output_temp/ - example script
@@ -27,8 +27,8 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: output/
-          destination-github-username: 'cpina'
-          destination-repository-name: 'push-to-another-repository-output'
+          destination-github-username: 'NoodlesStamps'
+          destination-repository-name: 'testimport'
           user-email: carles3@pina.cat
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
