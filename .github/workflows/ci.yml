@@ -26,7 +26,7 @@ jobs:
         env:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          source-directory: output/
+          source-directory: .
           destination-github-username: 'NoodlesStamps'
           destination-repository-name: 'testimport'
           user-email: carles3@pina.cat
